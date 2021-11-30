@@ -1,6 +1,4 @@
 import * as CryptoJs from 'crypto-js'
-import { get } from 'http'
-import { abort } from 'process'
 
 class Block {
   static calculateBlockHash = (
@@ -43,8 +41,6 @@ class Block {
 const genesisBlock: Block = new Block(0, '20211126', '', 'Hello', 123456)
 
 let blockchain: Block[] = [genesisBlock]
-
-const getBlockchain = (): Block[] => blockchain
 
 const getLatestBlock = (): Block => blockchain[blockchain.length - 1]
 
